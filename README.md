@@ -1,14 +1,20 @@
 # Kubernetes The Hard Way 
 
 # AMD64-Based Infrastructure Lab Provisioning environment configuration example
-
-
 Verified with all successfully completed steps, mentioned in the latest agnostic ["Kubernetes The Hard Way"](https://github.com/kelseyhightower/kubernetes-the-hard-way) 
 official release https://github.com/kelseyhightower/kubernetes-the-hard-way 
 
 [Announced by Kelsey Hightower, in April 2025.
 ](https://www.linkedin.com/posts/kelsey-hightower-849b342b1_kubernetes-the-hard-way-has-been-updated-activity-7315197014126804992-Qp9R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAQgt6IBcwC4E7wHLIleC--ia5VFLXJc4mo
 )
+
+
+### Copyright
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+
+
 
 ### Documentation Release Kubernetes Component versions:
 
@@ -63,7 +69,49 @@ git clone https://github.com/alexggolovin/amd64-labenv-kubernetes-the-hard-way.g
 vagrant up
 ```
 
+4. Command running examples:
 
+ 4.1 Infrastructure status check:
+```bash
+─$ vagrant status    
+Current machine states:
+
+k8s_server                not created (virtualbox)
+k8s_node_0                not created (virtualbox)
+k8s_node_1                not created (virtualbox)
+k8s_jumpbox               not created (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+```
+
+ 4.2 Infrastructure provisioning:
+```bash
+vagrant up
+```
+
+```bash
+─$ vagrant status
+Current machine states:
+
+k8s_server                running (virtualbox)
+k8s_node_0                running (virtualbox)
+k8s_node_1                running (virtualbox)
+k8s_jumpbox               running (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+```
+
+4.3 Infrastructure destroy
+```bash
+vagrant destroy -f
+```
+
+
+ 
 
 
 

@@ -1,0 +1,5 @@
+#k8s hard way original
+192.168.56.10 server.kubernetes.local
+192.168.56.11 node-0.kubernetes.local
+192.168.56.12 node-1.kubernetes.local
+192.168.56.13 jumpbox.kubernetes.local
