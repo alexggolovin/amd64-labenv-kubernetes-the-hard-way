@@ -8,7 +8,6 @@ official release https://github.com/kelseyhightower/kubernetes-the-hard-way
 ](https://www.linkedin.com/posts/kelsey-hightower-849b342b1_kubernetes-the-hard-way-has-been-updated-activity-7315197014126804992-Qp9R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAQgt6IBcwC4E7wHLIleC--ia5VFLXJc4mo
 )
 
-
 ### Copyright
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
@@ -110,10 +109,19 @@ VM, run `vagrant status NAME`.
 vagrant destroy -f
 ```
 
-5. Login to the new provisioned jumpbox vm to begine with the "Kubernetes Hard Way" journey:
+5. Login to the new provisioned jumpbox vm to begin with the "Kubernetes Hard Way" journey:
 ```bash
 ssh -i id_rsa root@jumpbox.kubernetes.local
 ```
+
+ More detailed real life command running output examples can be found in "[My_Hard_Way_Journey](My_Hard_Way_Journey)", 
+work log tracking part:
+
+
+
+Next: [My_Hard_Way_Journey](My_Hard_Way_Journey)
+
+
 
  
 

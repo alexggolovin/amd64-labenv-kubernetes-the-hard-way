@@ -29,3 +29,5 @@ encryption-config.yaml                                                          
 root@jumpbox:~/kubernetes-the-hard-way# 
 
 ```
+
+Next: [Lab_07_Bootstraping_etcd_Cluster.md](Lab_07_Bootstraping_etcd_Cluster.md)

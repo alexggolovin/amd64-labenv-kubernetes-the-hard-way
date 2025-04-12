@@ -269,3 +269,6 @@ Kustomize Version: v5.5.0
 root@jumpbox:~/kubernetes-the-hard-way# 
 
 ```
+
+
+Next: [Lab_03_Compute_Resources.md](Lab_03_Compute_Resources.md)

@@ -45,3 +45,5 @@ root@server:~# etcdctl member list
 root@server:~# 
 
 ```
+
+Next: [Lab_08_Bootstraping_Controllers.md](Lab_08_Bootstraping_Controllers.md)

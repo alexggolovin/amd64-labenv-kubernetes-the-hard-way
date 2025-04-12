@@ -191,3 +191,5 @@ root@jumpbox:~/kubernetes-the-hard-way# date
 Sat Apr 12 02:06:43 UTC 2025
 root@jumpbox:~/kubernetes-the-hard-way# 
 ```
+
+Next: [Lab_06_Gen_Data_Encrypt_Config_Key.md](Lab_06_Gen_Data_Encrypt_Config_Key.md)
