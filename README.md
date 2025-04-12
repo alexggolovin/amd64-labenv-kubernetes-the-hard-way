@@ -110,6 +110,10 @@ VM, run `vagrant status NAME`.
 vagrant destroy -f
 ```
 
+5. Login to the new provisioned jumpbox vm to begine with the "Kubernetes Hard Way" journey:
+```bash
+ssh -i id_rsa root@jumpbox.kubernetes.local
+```
 
  
 
