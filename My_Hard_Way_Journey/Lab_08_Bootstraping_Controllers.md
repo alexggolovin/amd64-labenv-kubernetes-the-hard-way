@@ -343,4 +343,4 @@ root@jumpbox:~/kubernetes-the-hard-way#
 
 ```
 
-Next: [Lab_08_Bootstraping_Controllers.md](Lab_08_Bootstraping_Controllers.md)
+Next: [Lab_09_Bootstraping_Worker_Nodes.md](Lab_09_Bootstraping_Worker_Nodes.md)
