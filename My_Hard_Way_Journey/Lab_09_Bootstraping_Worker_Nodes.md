@@ -420,4 +420,4 @@ root@node-1:~#
 
 ```
 
-Next: [Lab_09_Bootstraping_Worker_Nodes.md](Lab_09_Bootstraping_Worker_Nodes.md)
+Next: [Lab_10_Config_Kubectl_Remote.md](Lab_10_Config_Kubectl_Remote.md)
