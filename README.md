@@ -114,12 +114,25 @@ vagrant destroy -f
 ssh -i id_rsa root@jumpbox.kubernetes.local
 ```
 
- More detailed real life command running output examples can be found in "[My_Hard_Way_Journey](My_Hard_Way_Journey)", 
+6. Go to "Kubernetes Hard Way" official reference: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/02-jumpbox.md, for 
+proceeding with next steps on your new provisioned environment. 
+
+7. More detailed real life command running output examples tracked here, during my lap practices: "[My_Hard_Way_Journey](My_Hard_Way_Journey)", 
 work log tracking part:
 
 
 
-Next: [My_Hard_Way_Journey](My_Hard_Way_Journey)
+Next: 
+
+Command run official reference: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/02-jumpbox.md
+
+My Lab practice command run examples: [My_Hard_Way_Journey](My_Hard_Way_Journey)
+
+
+
+
+Enjoy your Kubernetes Hard Way learning! ;)
+
 
 
 
