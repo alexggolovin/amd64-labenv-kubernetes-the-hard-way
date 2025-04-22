@@ -109,10 +109,11 @@ VM, run `vagrant status NAME`.
 vagrant destroy -f
 ```
 
-5. Login to the new provisioned jumpbox vm to begin with the "Kubernetes Hard Way" journey:
+5. Login to the new provisioned jumpbox vm, using ip address, to begin with the "Kubernetes Hard Way" journey:
 ```bash
-ssh -i id_rsa root@jumpbox.kubernetes.local
+ssh -i id_rsa root@192.168.56.13
 ```
+
 
 6. Go to "Kubernetes Hard Way" official reference: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/02-jumpbox.md, for 
 proceeding with next steps on your new provisioned environment. 
