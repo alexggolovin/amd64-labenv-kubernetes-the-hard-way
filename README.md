@@ -110,10 +110,35 @@ vagrant destroy -f
 ```
 
 5. Login to the new provisioned jumpbox vm, using ip address, to begin with the "Kubernetes Hard Way" journey:
-```bash
-ssh -i id_rsa root@192.168.56.13
-```
 
+```bash
+└─$ ssh -i id_rsa root@192.168.56.13 
+The authenticity of host '192.168.56.13 (192.168.56.13)' can't be established.
+ED25519 key fingerprint is SHA256:J8wnmNM2kUwv7uKbsQyXx/508fDvAtn2+H0zYAWLGyk.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.56.13' (ED25519) to the list of known hosts.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0664 for 'id_rsa' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "id_rsa": bad permissions
+root@192.168.56.13: Permission denied (publickey).                                                                                                                                                                                                                                 
+└─$ chmod 600 id_rsa                                                                                                                                                                                                                                                     
+└─$ ssh -i id_rsa root@192.168.56.13
+Linux jumpbox 6.1.0-29-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.123-1 (2025-01-02) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+root@jumpbox:~# 
+
+```
 
 6. Go to "Kubernetes Hard Way" official reference: https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/02-jumpbox.md, for 
 proceeding with next steps on your new provisioned environment. 
