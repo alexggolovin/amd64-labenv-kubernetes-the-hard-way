@@ -198,6 +198,99 @@ ETag: "67a34638-267"
 Accept-Ranges: bytes
 ```
 
+### Commands run output terminal 1
+
+```bash
+root@jumpbox:~# kubectl create deployment nginx --image=nginx:latest
+deployment.apps/nginx created
+root@jumpbox:~# kubectl get pods -l app=nginx
+NAME                     READY   STATUS    RESTARTS   AGE
+nginx-54c98b4f84-9x4qx   1/1     Running   0          21s
+root@jumpbox:~# kubectl get pods -l app=nginx
+NAME                     READY   STATUS    RESTARTS   AGE
+nginx-54c98b4f84-9x4qx   1/1     Running   0          50s
+root@jumpbox:~# POD_NAME=$(kubectl get pods -l app=nginx \
+  -o jsonpath="{.items[0].metadata.name}")
+root@jumpbox:~# echo $POD_NAME
+nginx-54c98b4f84-9x4qx
+root@jumpbox:~# kubectl port-forward $POD_NAME 8080:80
+Forwarding from 127.0.0.1:8080 -> 80
+Forwarding from [::1]:8080 -> 80
+
+Handling connection for 8080
+
+
+
+
+
+
+
+```
+
+
+### Commands run output terminal 2
+
+```bash
+root@jumpbox:~# curl --head http://127.0.0.1:8080
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 22 Apr 2025 15:45:44 GMT
+Content-Type: text/html
+Content-Length: 615
+Last-Modified: Wed, 16 Apr 2025 12:01:11 GMT
+Connection: keep-alive
+ETag: "67ff9c07-267"
+Accept-Ranges: bytes
+
+root@jumpbox:~# kubectl logs $POD_NAME
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2025/04/22 15:42:03 [notice] 1#1: using the "epoll" event method
+2025/04/22 15:42:03 [notice] 1#1: nginx/1.27.5
+2025/04/22 15:42:03 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2025/04/22 15:42:03 [notice] 1#1: OS: Linux 6.1.0-32-amd64
+2025/04/22 15:42:03 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/04/22 15:42:03 [notice] 1#1: start worker processes
+2025/04/22 15:42:03 [notice] 1#1: start worker process 29
+2025/04/22 15:42:03 [notice] 1#1: start worker process 30
+127.0.0.1 - - [22/Apr/2025:15:45:44 +0000] "HEAD / HTTP/1.1" 200 0 "-" "curl/7.88.1" "-"
+root@jumpbox:~# kubectl exec -ti $POD_NAME -- nginx -v
+nginx version: nginx/1.27.5
+root@jumpbox:~# kubectl expose deployment nginx \
+  --port 80 --type NodePort
+service/nginx exposed
+root@jumpbox:~# NODE_PORT=$(kubectl get svc nginx \
+  --output=jsonpath='{range .spec.ports[0]}{.nodePort}')
+root@jumpbox:~# NODE_NAME=$(kubectl get pods \
+  -l app=nginx \
+  -o jsonpath="{.items[0].spec.nodeName}")
+root@jumpbox:~# echo $NODE_NAME
+node-1
+root@jumpbox:~# echo $NODE_PORT
+31249
+root@jumpbox:~# curl -I http://${NODE_NAME}:${NODE_PORT}
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 22 Apr 2025 15:49:04 GMT
+Content-Type: text/html
+Content-Length: 615
+Last-Modified: Wed, 16 Apr 2025 12:01:11 GMT
+Connection: keep-alive
+ETag: "67ff9c07-267"
+Accept-Ranges: bytes
+
+root@jumpbox:~# 
+
+```
+
+
 Next: Lab_13_Repeat [Lab_02_JumpBox.md](Lab_02_JumpBox.md)
 
 
