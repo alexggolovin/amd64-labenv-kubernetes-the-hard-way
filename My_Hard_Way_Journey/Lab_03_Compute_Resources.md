@@ -15,6 +15,9 @@ root@jumpbox:~# cat machines.txt
 192.168.56.12 node-1.kubernetes.local node-1 10.200.1.0/24
 root@jumpbox:~# ls
 kubernetes-the-hard-way  machines.txt
+root@jumpbox:~# pwd
+/root
+root@jumpbox:~# chmod 600 .ssh/id_rsa 
 root@jumpbox:~# while read IP FQDN HOST SUBNET; do
   ssh -n root@${IP} hostname
 done < machines.txt
