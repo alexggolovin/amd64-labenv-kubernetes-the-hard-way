@@ -104,11 +104,6 @@ above with their current state. For more information about a specific
 VM, run `vagrant status NAME`.
 ```
 
-4.3 Infrastructure destroy
-```bash
-vagrant destroy -f
-```
-
 5. Login to the new provisioned jumpbox vm, using ip address, to begin with the "Kubernetes Hard Way" journey:
 
 ```bash
@@ -153,10 +148,14 @@ My Lab practice command run examples: [My_Hard_Way_Journey commands run examples
 
 Command run official reference: [Kubernetes Hard Way official commands run reference](https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/02-jumpbox.md)
 
-
-
-
 ### Enjoy your Kubernetes Hard Way learning! ;)
+
+
+And do not forget destroy provisioned lab infrastructure in the end of the journey:
+Infrastructure destroy
+```bash
+vagrant destroy -f
+```
 
 
 
