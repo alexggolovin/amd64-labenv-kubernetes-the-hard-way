@@ -56,7 +56,8 @@ Vagrant.configure("2") do |config|
     config.vm.provision "file", source: "id_rsa", destination: "~/.ssh/id_rsa"
     config.vm.provision "file", source: "machines.txt", destination: "~/machines.txt"
     config.vm.provision "shell", run: "always", inline: <<-SHELL 
-      sudo cp /home/vagrant/.ssh/id_rsa /root/.ssh/id_rsa 
+      sudo cp /home/vagrant/.ssh/id_rsa /root/.ssh/id_rsa
+      sudo chmod 600 /root/.ssh/id_rsa
       sudo cp /home/vagrant/machines.txt /root/machines.txt
     SHELL
   end
